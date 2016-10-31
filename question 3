@@ -1,8 +1,0 @@
-Which of the commands shows the new hard disk and what is the name of the new disk?:
-The lsblk command shows the new hard disk. The name of the new hard disk is sdb
-
-Which of the commands shows the new hard disk?
-The lsblk command is still the only that shows the new hard disk. The difference now is that the sdb1 partition is displayed
-
-Which of the commands shows the new hard disk?
-df -h and lsblk both show the new hard disk. df -h shows the mount point of each partition
