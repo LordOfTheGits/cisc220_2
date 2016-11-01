@@ -11,10 +11,10 @@ function recur {
     echo "Name:" $(basename ${commands[$1]}) "PID:" ${pids[$1]} "PPID:" ${ppids[$1]} "STARTED:" ${starts[$1]} "BY:" ${users[$1]}
 
     #for loop that will go through and check if the current process has any child processes
-    for (( loc=1; loc<118; loc++ )) ; do
+    for (( loc=1; loc<${#pids[*]}; loc++ )) ; do
 
         #if it does have child processes
-        if (( $cpid == ${ppids[loc]} )) ; then
+        if [[ $cpid == ${ppids[$loc]} ]] ; then
             printf "|     |" #prints space to make tree
             recur $loc #and recursive call with info for the pid of current command to see if that one has child commands
         fi
